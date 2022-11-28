@@ -1,0 +1,109 @@
+#CHANGE THE filepath TO WHERE YOU FIND THE SLICE FILES IN YOUR COMPUTER (mine is in my downloads file)
+# Configurations for the entire analysis
+filepath = "/Users/alicelau/Downloads/spotify_million_playlist_dataset/data"
+# Change the index below to choose the specific data file
+json_index = 1
+
+#import libraries
+import os
+import json
+import pandas as pd
+# For more user friendly error messages
+from IPython.display import Markdown
+
+#These functions below are to display errors in a more friendly way
+# Helper functions for general purpose
+def displayError(error,suggestion):
+    display (Markdown("<b><span style='color: #ff0000'>[Error] </span>"+str(error)+". "+str(suggestion)+" 🤔?</b>"))
+def displayInfo(message):
+    display (Markdown("<b><span style='color: #0000ff'>[Info] </span>"+str(message)+".</b>"))
+    
+#In the cell below, we use os to go and get the names of all the json files in filepath as a list. We store it in onlyfiles. The listdir does the job.
+from os import listdir
+from os.path import isfile, join
+# onlyfiles is the list of all the json files you have
+onlyfiles = [f for f in listdir(filepath) if isfile(join(filepath, f))]
+# print(onlyfiles)
+
+# fullpath joins the location of the json files with the individual filenames
+# Handles the error if you cannot open the file
+try:
+    fullpath = os.path.join(filepath, onlyfiles[json_index])
+    # print(fullpath)
+except:
+    json_index = 0;
+    fullpath = os.path.join(filepath, onlyfiles[json_index])
+    displayError("Cannot find that json file in your computer","Did you type in a valid json_index on the top")
+    displayInfo("We are going to use the first file instead, which is "+str(onlyfiles[json_index]))
+    
+#Here, we use pandas to load the contents of the json file into the system. Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
+
+
+# Here as a test, we want to analyze the second file in your onlyfiles
+# This loads the contents of entire json into data variable
+# data = contents of entire json (data is just a name here)
+data = json.load(open(fullpath))
+# Analyzing the structure of our json file manually 
+# suggests that the content we want are in the jsonfile->playlists
+# So we specifically load the playlists into pandas. 
+# This is like a russian doll.
+df = pd.DataFrame(data["playlists"])
+# Print the top 10 playlists in that file
+print("Reading ",onlyfiles[json_index])
+print(df.head(3))
+
+
+# Ask for inputs
+print("Type in the information below, and hit enter. You can leave blank if you need to.")
+artist_name = input("Artist Name : ")
+track_name = input("Track Name : ")
+album_name = input("Album Name : ")
+
+# Main Code for recommendation
+# Select the tracks column in our data for all playlists
+all_tracks = df['tracks']
+
+# And loop through them and calculate the scores. Then, return the maximum
+maximum = -1
+playlist_index = -1
+
+x = range(len(all_tracks))
+for n in x:
+    # Choose current track
+    current_track = pd.DataFrame(all_tracks[n])
+    # These calculates the scores. It counts the number of matches for artist, tracks and albums
+    # And divides by the number of tracks to normalize for fair comparison
+    artist_score = 0.0;
+    track_score = 0.0;
+    album_score = 0.0;
+    if(artist_name != ""):
+        artist_score = current_track['artist_name'].str.contains(artist_name).sum()/len(current_track)
+    if(track_name != ""):
+        track_score = current_track['track_name'].str.contains(track_name).sum()/len(current_track)
+    if(album_name != ""):
+        album_score = current_track['album_name'].str.contains(album_name).sum()/len(current_track)
+    # Then use the average score as a metric
+    average_score = ((artist_score + track_score + album_score)/3)*100
+    if(average_score > maximum):
+        maximum = average_score
+        playlist_index = n
+
+# And finaly recommend the playlist from that json
+playlist_name = df.loc[playlist_index]['name']
+query_string = []
+if(artist_name != ""):
+    query_string.append(artist_name)
+if(track_name != ""):
+    query_string.append(track_name)
+if(album_name != ""):
+    query_string.append(album_name)
+# Recommend and print the output
+if(maximum > 0):
+    print("😃😃 You should listen to the playlist called "+str(playlist_name)+".")
+    print("♫ 🎸It has the closest match to "+str(query_string)+" with a score of "+str(maximum)+".")
+    results = pd.DataFrame(all_tracks[playlist_index])
+    display(results[['artist_name', 'track_name','album_name']])
+else:
+    print("😭😭😭 Sorry, no recommendation found.")
+    
+    
