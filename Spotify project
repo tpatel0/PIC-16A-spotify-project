@@ -6,6 +6,7 @@ json_index = 1
 
 #import libraries
 import os
+#the package os is for getting the slices files names and using it as a list so we can use json files and don't have to convert into csv
 import json
 import pandas as pd
 # For more user friendly error messages
