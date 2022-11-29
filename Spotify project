@@ -32,7 +32,7 @@ try:
     fullpath = os.path.join(filepath, onlyfiles[json_index])
     # print(fullpath)
 except:
-    json_index = 0;
+    json_index = 0
     fullpath = os.path.join(filepath, onlyfiles[json_index])
     displayError("Cannot find that json file in your computer","Did you type in a valid json_index on the top")
     displayInfo("We are going to use the first file instead, which is "+str(onlyfiles[json_index]))
@@ -74,9 +74,9 @@ for n in x:
     current_track = pd.DataFrame(all_tracks[n])
     # These calculates the scores. It counts the number of matches for artist, tracks and albums
     # And divides by the number of tracks to normalize for fair comparison
-    artist_score = 0.0;
-    track_score = 0.0;
-    album_score = 0.0;
+    artist_score = 0.0
+    track_score = 0.0
+    album_score = 0.0
     if(artist_name != ""):
         artist_score = current_track['artist_name'].str.contains(artist_name).sum()/len(current_track)
     if(track_name != ""):
