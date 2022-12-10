@@ -2,7 +2,7 @@
 PIC 16A, Fall 2022: Alice Lau, Alyssa Cosico, Trisha Patel
 
 ### Task:
-Our goal is to use Spotify's Million Playlist Data Set to allow users to input an Artist, Album, and Song, and recieve a playlist recommendation isntead. 
+Our goal is to use Spotify's Million Playlist Data Set to allow users to input an Artist and Song, and recieve a playlist recommendation isntead. 
 
 ## The Dataset:
 The Million Playlist Dataset contains 1,000,000 playlists, including playlist titles, and track titles, created by US Spotify users on Spotify between January 2010 and October 2017. The playlists are samples from the over 4 billion plalists on Spotify, has over 2 million unique tracks by around 300,000 artists. 
