@@ -3,7 +3,7 @@ import pandas as pd
     
 class FindPlaylists():
     '''
-    Class that finds playlist from a slice of the Million Playlists Spotify dataset that contains user input(s)
+    Class that finds playlist from a slice of the Million Playlists dataset that contains user input(s)
     '''
     def __init__(self, data):
         '''
