@@ -1,5 +1,6 @@
 # Spotify Million Playlists DataSet Playlist Generator
 PIC 16A, Fall 2022: Alice Lau, Alyssa Cosico, Trisha Patel
+
 ### Task:
 Our goal is to use Spotify's Million Playlist Data Set to allow users to input an Artist, Album, and Song, and recieve a playlist recommendation isntead. 
 
@@ -15,17 +16,18 @@ Each playlist in the MPD contains the following:
   **Duration_ms**: the length of the playlist timewise
   **num_artists**: the number of artists in the playlist
   **tracks:** 
-    **pos:** number position of the track
-    **artist_name:** the name of the artist of the track
-    **track_uri:** the uri of the track
-    **artist_uri:** the uri of the track
-    **track_name:** name of the track
-    **album_uri:** name of the album
-    **duration_ms:** length of the song
-    **album_name:** name of the album the song is in
+  **pos:** number position of the track
+  **artist_name:** the name of the artist of the track
+  **track_uri:** the uri of the track
+  **artist_uri:** the uri of the track
+  **track_name:** name of the track
+  **album_uri:** name of the album
+  **duration_ms:** length of the song
+  **album_name:** name of the album the song is in
     
-    ##Scope and Limitations##:
-    1. Due to the immense size of the Million Playlists Dataset, we were unable to use        the entire dat set, and thus some Playlists are missing during the calculations        where input data is compared to the dataset, and the playlist generated may not        be the best fit. 
-    2. The Million Playlists Dataset is around 5 years ols and thus is missing much          information such as newer songs, the change in popularity of songs, and newer          playlists. 
+##Scope and Limitations##:
+  1. Due to the immense size of the Million Playlists Dataset, we were unable to use the entire data set, and thus some Playlists are missing during the calculations        where input data is compared to the dataset, and the playlist generated may not be the best fit. 
+  2. The Million Playlists Dataset is around 5 years ols and thus is missing much information such as newer songs, the change in popularity of songs, and newer         playlists. 
+
 ##References:##
 Project uses the Million Playlist Dataset: Ching-Wei Chen, Markus Schedl, Hamed Zamani, Paul Lamere. 
