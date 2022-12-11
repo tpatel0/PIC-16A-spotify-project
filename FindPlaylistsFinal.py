@@ -116,6 +116,7 @@ class FindPlaylists():
             print("♫🎸 It has the closest match to "+str(self.query())+" with a score of "+str(high_score)+".")
             print("🎶🎼 This playlist includes songs such as: ")
             
+            # boolean index songs in desired playlist
             songs_df = self.data['pid'] == playlist_index
             return self.data[songs_df].head(10)
         else:
