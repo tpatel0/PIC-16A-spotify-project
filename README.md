@@ -6,24 +6,25 @@ Our goal is to use Spotify's Million Playlist Data Set to allow users to input a
 
 ## The Dataset:
 The Million Playlist Dataset contains 1,000,000 playlists, including playlist titles, and track titles, created by US Spotify users on Spotify between January 2010 and October 2017. The playlists are samples from the over 4 billion plalists on Spotify, has over 2 million unique tracks by around 300,000 artists. 
-Each playlist in the MPD contains the following: 
-  **Name:** the name of the playlist
-  **Collaborative:** bool value for whether the playlist is collaborative or not
-  **Mofified_at:** the date of modification
-  **Num_albums:** number of albums in the playlist
-  **Num_tracks:** number of tracks in the playlist
-  **Num_edits:** rounds of edits for the playlist
-  **Duration_ms**: the length of the playlist timewise
-  **num_artists**: the number of artists in the playlist
-  **tracks:** 
-  **pos:** number position of the track
-  **artist_name:** the name of the artist of the track
-  **track_uri:** the uri of the track
-  **artist_uri:** the uri of the track
-  **track_name:** name of the track
-  **album_uri:** name of the album
-  **duration_ms:** length of the song
-  **album_name:** name of the album the song is in
+Each playlist in the MPD contains the following:<br>
+  **Name:** the name of the playlist<br>
+  **Collaborative:** bool value for whether the playlist is collaborative or not<br>
+  **Mofified_at:** the date of modification<br>
+  **Num_albums:** number of albums in the playlist<br>
+  **Num_tracks:** number of tracks in the playlist<br>
+  **Num_edits:** rounds of edits for the playlist<br>
+  **Duration_ms**: the length of the playlist timewise<br>
+  **num_artists**: the number of artists in the playlist<br>
+  **tracks:**<br> 
+  **pos:** number position of the track<br>
+  **artist_name:** the name of the artist of the track<br>
+  **track_uri:** the uri of the track<br>
+  **artist_uri:** the uri of the track<br>
+  **track_name:** name of the track<br>
+  **album_uri:** name of the album<br>
+  **duration_ms:** length of the song<br>
+  **album_name:** name of the album the song is in<br>
+  
 ## Python Packages Used:
 Pandas: Version 1.4.2
 Json5: 0.9.6 
