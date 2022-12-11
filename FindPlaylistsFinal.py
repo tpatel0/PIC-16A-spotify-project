@@ -54,8 +54,6 @@ class FindPlaylists():
             mystring: string dependent on user input. "Finding playlists that contain {condition depending on user input}"
         '''
         q = self.query()
-        # s = ', '
-        # s = s.join(q)
         
         mystring = "Finding playlists that contain " + str(q) + "."
         
