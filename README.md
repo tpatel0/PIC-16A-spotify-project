@@ -53,7 +53,7 @@ FindRecs() method is called where the proportion of the inputted artist and inpu
 ShowResults() method is called that prints the recommended playlist id, the playlist score, and the songs within the playlist, returning the first 10 tracks in that playlist.<br> 
 
 <img width="464" alt="Screen Shot 2022-12-10 at 6 13 57 PM" src="https://user-images.githubusercontent.com/114253491/206880825-cb7becae-722d-4474-84ea-d72056dca27c.png"><br>
-*fig 2. Playlist Recommendation: the above figure shows the output generated when the final playlist is recommended.<br>
+*fig 2. Playlist Recommendation: the above figure shows the output generated when the final playlist is recommended.*<br>
 ## Scope and Limitations:<br>
   1. Due to the immense size of the Million Playlists Dataset, we were unable to use the entire data set, and thus some Playlists are missing during the calculations where input data is compared to the dataset, and the playlist generated may not be the best fit. <br>
   2. The Million Playlists Dataset is around 5 years old and thus is missing much information such as newer songs, the change in popularity of songs, and newer playlists.<br> 
