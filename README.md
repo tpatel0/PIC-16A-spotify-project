@@ -37,6 +37,7 @@ We have defined Custom Class FindPlaylists as can be seen in the FindPlaylistsFi
 **1. read data, and drop unused columns.**
   In the first we load the cleaned csv file from gitHub url and display it:
    <img width="703" alt="Screen Shot 2022-12-10 at 6 14 55 PM" src="https://user-images.githubusercontent.com/114253491/206880606-9d421d32-4c65-4440-b776-8d8fb5365f06.png">
+   *fig 1. cleanCSV(head): the above figure shows the first few rows of the slice of the million playlists data we are working with in this project.*
 **2. Collect input:**
   An instance of the class FindPlaylists is created, and input is prompted as per the __init__(self,data) method of the class.
   We ask for an Artist Name and Song Name from that Artist. Only one is required to generate the playlist. 
@@ -49,7 +50,7 @@ FindRecs() method is called where the proportion of the inputted artist and inpu
 ShowResults() method is called that prints the recommended playlist id, the playlist score, and the songs within the playlist, returning the first 10 tracks in that playlist. 
 
 <img width="464" alt="Screen Shot 2022-12-10 at 6 13 57 PM" src="https://user-images.githubusercontent.com/114253491/206880825-cb7becae-722d-4474-84ea-d72056dca27c.png">
-
+*fig 2. Playlist Recommendation: the above figure shows the output generated when the final playlist is recommended.
 ## Scope and Limitations:
   1. Due to the immense size of the Million Playlists Dataset, we were unable to use the entire data set, and thus some Playlists are missing during the calculations        where input data is compared to the dataset, and the playlist generated may not be the best fit. 
   2. The Million Playlists Dataset is around 5 years old and thus is missing much information such as newer songs, the change in popularity of songs, and newer         playlists. 
