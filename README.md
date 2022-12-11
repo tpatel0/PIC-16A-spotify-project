@@ -24,7 +24,10 @@ Each playlist in the MPD contains the following:
   **album_uri:** name of the album
   **duration_ms:** length of the song
   **album_name:** name of the album the song is in
-    
+##Python Packages Used:##
+Pandas: Version 1.4.2
+Json5: 0.9.6 
+Numpy: 1.21.5
 ##Scope and Limitations##:
   1. Due to the immense size of the Million Playlists Dataset, we were unable to use the entire data set, and thus some Playlists are missing during the calculations        where input data is compared to the dataset, and the playlist generated may not be the best fit. 
   2. The Million Playlists Dataset is around 5 years ols and thus is missing much information such as newer songs, the change in popularity of songs, and newer         playlists. 
