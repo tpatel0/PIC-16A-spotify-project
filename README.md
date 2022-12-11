@@ -34,7 +34,7 @@ Numpy: 1.21.5<br>
 **Cleaning Data:**
 Prior to the demo file, function JsontoCSVConverter was used to convert the data slice we acquired into csv format. This function was implemented along with other cleaning mechanisms in the SongsClearningDataFinal.ipynb final which results in the clean.csv file we have provided. <br>
 
-**Custom Class:*
+**Custom Class:**
 We have defined Custom Class FindPlaylists as can be seen in the FindPlaylistsFinal.py file. This class includes methods __init__(), query(), __str__(), findRecs(), and showResults that are called in the demo file. 
 ### Contents of the Demo File:
 **1. Read data, and drop unused columns.**<br>
